@@ -73,7 +73,7 @@ func (log *Log) isBreakServer(index int) {
 			if log.ping[j] == "-" {
 				count += 1
 			} else {
-				if count == timeout_count {
+				if count >= timeout_count {
 					text = "ip:" + log.ip[j] + ",status:break, start:" + log.dateAtime[index].String() + ", end:" + log.dateAtime[j].String() + "\n"
 					write_file()
 				}
